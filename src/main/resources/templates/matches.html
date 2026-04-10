@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pool Matches</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<!-- genai throgh chatGPT was used on this page to help design the HTML and CSS aspects of the website-->
+<!-- NAVBAR -->
+<header class="site-header">
+    <div class="container nav-container">
+        <div class="logo">🎱 Pool Hub</div>
+
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/stats">Player Stats</a>
+            <a href="/matches">Matches</a>
+            <a href="/competitions">Competitions</a>
+            <a href="/merchandise">Merch</a>
+        </nav>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Pool Matches</h1>
+            <p>View all matches or add new results below.</p>
+        </div>
+    </section>
+
+    <!-- ADD NEW MATCH FORM -->
+    <section class="card">
+        <h2>Add New Match</h2>
+        <form th:action="@{/matches/add}" th:object="${newMatch}" method="post">
+            <input type="text" th:field="*{player1}" placeholder="Player 1" required>
+            <input type="text" th:field="*{player2}" placeholder="Player 2" required>
+            <input type="number" th:field="*{scorePlayer1}" placeholder="Score 1" required>
+            <input type="number" th:field="*{scorePlayer2}" placeholder="Score 2" required>
+            <input type="datetime-local" th:field="*{matchTime}" placeholder="Match Time">
+            <input type="text" th:field="*{location}" placeholder="Location">
+            <button type="submit" class="btn primary">Add Match</button>
+        </form>
+    </section>
+
+    <!-- EXISTING MATCHES TABLE -->
+    <section class="card" style="margin-top: 20px;">
+        <h2>Existing Matches</h2>
+        <table style="width: 100%; border-collapse: collapse; color: white;">
+            <thead>
+            <tr style="border-bottom: 2px solid #00ffae;">
+                <th>ID</th>
+                <th>Player 1</th>
+                <th>Player 2</th>
+                <th>Score 1</th>
+                <th>Score 2</th>
+                <th>Time</th>
+                <th>Location</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="match : ${matches}" style="border-bottom: 1px solid #00ffae;">
+                <td th:text="${match.id}"></td>
+                <td th:text="${match.player1}"></td>
+                <td th:text="${match.player2}"></td>
+                <td th:text="${match.scorePlayer1}"></td>
+                <td th:text="${match.scorePlayer2}"></td>
+                <td th:text="${#temporals.format(match.matchTime, 'yyyy-MM-dd HH:mm')}"></td>
+                <td th:text="${match.location}"></td>
+                <td>
+                    <form th:action="@{/matches/delete/{id}(id=${match.id})}" method="post">
+                        <button type="submit" class="btn primary">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <p>© 2026 Pool Information Hub</p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Match</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<!-- genai throgh chatGPT was used on this page to help design the HTML and CSS aspects of the website-->
+<header class="site-header">
+    <div class="container nav-container">
+        <div class="logo">🎱 Pool Hub</div>
+    </div>
+</header>
+
+<main class="container">
+
+    <h1>Add Match</h1>
+
+    <div class="card">
+        <form th:action="@{/admin/saveMatch}" method="post" th:object="${match}">
+
+            <label>Player 1:</label>
+            <input type="text" th:field="*{player1}">
+
+            <label>Player 2:</label>
+            <input type="text" th:field="*{player2}">
+
+            <label>Score:</label>
+            <input type="text" th:field="*{score}">
+
+            <label>Winner:</label>
+            <input type="text" th:field="*{winner}">
+
+            <label>Date:</label>
+            <input type="text" th:field="*{date}">
+
+            <br><br>
+            <button class="btn primary" type="submit">Save Match</button>
+
+        </form>
+    </div>
+
+</main>
+
+</body>
+</html>

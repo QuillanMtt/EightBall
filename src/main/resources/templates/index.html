@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Pool Information Hub</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<!-- genai throgh chatGPT was used on this page to help design the HTML and CSS aspects of the website-->
+<!-- NAVBAR (reuse on all pages) -->
+<header class="site-header">
+    <div class="container nav-container">
+        <div class="logo">🎱 Pool Hub</div>
+
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/stats">Player Stats</a>
+            <a href="/matches">Matches</a>
+            <a href="/competitions">Competitions</a>
+            <a href="/merchandise">Merch</a>
+        </nav>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="container">
+
+    <!-- HERO (optional, reusable) -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to the Pool Information Hub</h1>
+            <p>
+                Explore professional players, tournaments, and match results
+                from around the world.
+            </p>
+            <a href="/stats" class="btn primary">View Player Stats</a>
+        </div>
+
+        <div class="hero-media">
+            <img th:src="@{/image/pool.jpeg}" alt="Pool table">
+        </div>
+    </section>
+
+    <!-- GRID SECTION (reusable anywhere) -->
+    <section class="grid-3">
+
+        <a th:href="@{/stats}" class="card-link">
+            <div class="card">
+                <h2>🎯 Players</h2>
+                <p>Browse top players and rankings.</p>
+            </div>
+        </a>
+
+        <a th:href="@{/competitions}" class="card-link">
+            <div class="card">
+                <h2>🏆 Competitions</h2>
+                <p>See tournaments and events.</p>
+            </div>
+        </a>
+
+        <a th:href="@{/Matches}" class="card-link">
+            <div class="card">
+                <h2>📊 Stats</h2>
+                <p>View detailed performance stats.</p>
+            </div>
+        </a>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <p>© 2026 Pool Information Hub</p>
+    </div>
+</footer>
+
+</body>
+</html>

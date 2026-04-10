@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>About Pool</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<!-- genai throgh chatGPT was used on this page to help design the HTML and CSS aspects of the website-->
+<!-- NAVBAR -->
+<header class="site-header">
+    <div class="container nav-container">
+        <div class="logo">🎱 Pool Hub</div>
+        <nav class="nav">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <a href="/stats">Player Stats</a>
+            <a href="/matches">Matches</a>
+            <a href="/competitions">Competitions</a>
+            <a href="/merchandise">Merch</a>
+        </nav>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="container">
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>About the Game of Pool</h1>
+            <p>
+                Pool is a popular cue sport enjoyed worldwide. It combines strategy, skill, and precision,
+                with players aiming to pocket balls in a specific order on a table with six pockets.
+                Whether for leisure or professional tournaments, pool brings excitement to every game.
+            </p>
+        </div>
+        <div class="hero-media">
+            <img th:src="@{/image/pool_table.jpeg}" alt="Pool table with balls">
+        </div>
+    </section>
+
+    <!-- GRID OF POOL INFO CARDS -->
+    <section class="grid-3">
+
+        <div class="card">
+            <h2>History</h2>
+            <p>
+                Pool evolved from outdoor lawn games in Europe during the 15th century.
+                It became a popular indoor pastime in the 19th century and is now a professional sport worldwide.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Popular Games</h2>
+            <ul>
+                <li>8-Ball – Pocket all your balls (solids or stripes) then the 8-ball</li>
+                <li>9-Ball – Pocket balls in numerical order to win</li>
+                <li>Straight Pool – Score points by pocketing balls without following sequence</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Equipment</h2>
+            <ul>
+                <li>Pool cue – used to strike the cue ball</li>
+                <li>Table – usually with six pockets and felt surface</li>
+                <li>Chalk – applied to the cue tip for better friction</li>
+                <li>Balls – numbered and colored according to the game</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>How to Play Pool</h2>
+            <p>
+                1. Place the balls in the correct rack for your game.<br>
+                2. Break the rack with the cue ball.<br>
+                3. Take turns with your opponent to pocket balls.<br>
+                4. Use strategy and angles to plan shots ahead.<br>
+                5. The game ends when all required balls are pocketed according to the rules.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Why People Love Pool</h2>
+            <p>
+                Pool is not only competitive but also social.
+                It improves hand-eye coordination, mental calculation, and provides hours of fun.
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>Learn More</h2>
+            <ul>
+                <li><a href="https://www.azbilliards.com/" target="_blank">AzBilliards – Tournaments & News</a></li>
+                <li><a href="https://www.worldpoolassociation.com/" target="_blank">World Pool Association – Official Rules</a></li>
+                <li><a href="https://www.youtube.com/@PoolCompetitionHighlights" target="_blank">YouTube – Match Highlights</a></li>
+            </ul>
+        </div>
+
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <p>© 2026 Pool Information Hub</p>
+    </div>
+</footer>
+
+</body>
+</html>
